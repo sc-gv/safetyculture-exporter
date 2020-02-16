@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Config - iAuditor Exporter</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../../css/extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Config";
+    var mkdocs_page_input_path = "script-setup/config.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> iAuditor Exporter</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Installation</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../install-intros/introduction">Introduction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../install-intros/quick-install">Quick Install</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../install-intros/detailed-install">Detailed Installation Instructions</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">1. Install Python</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../Install-python/overview/">Overview</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../Install-python/mac/">Mac</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../Install-python/windows/">Windows</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">2. Download the Script</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../script-download/git/">Using Git (Recommended)</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../script-download/manual-dl/">Manual Download (If you can't use Git)</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">3. Setting up the Script</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../installing-packages/">Installing Requirements</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="./">Editing the config file</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">4. Running the Script</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../script-running/overview/">Overview</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Understanding the Data</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../understanding-the-data/overview">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../understanding-the-data/csv-or-sql">CSV or SQL?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../understanding-the-data/datastructure">Columns</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">iAuditor Exporter</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Config</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="editing-the-config-file">Editing the Config File</h2>
+<h3 id="key-options">Key Options</h3>
+<p>There are many options available, however only two are required for the script to run and export CSV files. </p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Optional?</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>token</td>
+<td>No</td>
+<td>Your API key, generated from iAuditor. <a href="https://support.safetyculture.com/integrations/how-to-get-an-api-token/">Click here for guidance</a></td>
+</tr>
+<tr>
+<td>config_name</td>
+<td>No</td>
+<td>You can set the name of your configuration here. Very useful if you're managing multiple as it'll be used to name files and organise folders. Do not use any spaces in this name.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sql-specific-options">SQL Specific Options</h3>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sql_table</td>
+<td>The name of the table in which you want to store your iAuditor information. Best practice is to make sure it doesn't exist, as the script will create it for you.</td>
+</tr>
+<tr>
+<td>database_type</td>
+<td>The type of database you're using. for SQL use 'mssql+pyodbc_mssql', for Postgres it's 'postgresql' (More should work, please refer to the SQLAlchemy documentation)</td>
+</tr>
+<tr>
+<td>database_user</td>
+<td>The username to login to your database</td>
+</tr>
+<tr>
+<td>database_pwd</td>
+<td>Your database password</td>
+</tr>
+<tr>
+<td>database_server</td>
+<td>Server where your database is located</td>
+</tr>
+<tr>
+<td>database_port</td>
+<td>The port your database is listening on</td>
+</tr>
+<tr>
+<td>database_name</td>
+<td>The name of the database you'll be connecting to. You can also define the driver to use if you need to - for SQL you'll likely want to add <code>?driver=ODBC Driver 17 for SQL Server</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-options">Other Options</h3>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Optional?</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>export_path</td>
+<td>Yes</td>
+<td>absolute or relative path to the directory where to save exported data to</td>
+</tr>
+<tr>
+<td>filename</td>
+<td>Yes</td>
+<td>an audit item ID whose response is going to be used to name the files of exported audit reports. Can only be an item with a response type of <code>text</code> from the header section of the audit such as Audit Title, Document No., Client / Site, Prepared By, Personnel, or any custom header item which has a 'text' type response (doesn't apply when exporting as CSV)</td>
+</tr>
+<tr>
+<td>use_real_template_name</td>
+<td>Yes</td>
+<td>If you set this to true, the script will append the name of the template to the exported CSV file. Keep in mind that if you use this option and change the name of a template, a new file will be generated next time the script runs.</td>
+</tr>
+<tr>
+<td>preferences</td>
+<td>Yes</td>
+<td>to apply a preference transformation to particular templates, give here a list of preference ids</td>
+</tr>
+<tr>
+<td>template_ids</td>
+<td>Yes</td>
+<td>Here you can specify the templates from which you'd like to download your data. You need to format the templates into a list like this: <code>template_123,template456,template,789</code> - If you want just one template, just write it on its own, like this: <code>template_123</code></td>
+</tr>
+<tr>
+<td>sync_delay_in_seconds</td>
+<td>Yes</td>
+<td>time in seconds to wait after completing one export run, before running again</td>
+</tr>
+<tr>
+<td>export_inactive_items</td>
+<td>Yes</td>
+<td>This setting only applies when exporting to CSV. Valid values are true (export all items) or false (do not export inactive items). Items that are nested under <a href="https://support.safetyculture.com/templates/smart-fields/">Smart Field</a> will be 'inactive' if the smart field condition is not satisfied for these items.</td>
+</tr>
+<tr>
+<td>media_sync_offset_in_seconds</td>
+<td>Yes</td>
+<td>time in seconds since an audit has been modified before it will by synced</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
