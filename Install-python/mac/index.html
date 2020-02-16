@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Overview - iAuditor Exporter</title>
+  <title>Mac - iAuditor Exporter</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Overview";
-    var mkdocs_page_input_path = "script-running/overview.md";
+    var mkdocs_page_name = "Mac";
+    var mkdocs_page_input_path = "Install-python/mac.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -76,15 +76,15 @@
     <ul class="subnav">
                 <li class="toctree-l3">
                     
-    <a class="" href="../../Install-python/overview/">Overview</a>
+    <a class="" href="../overview/">Overview</a>
                 </li>
                 <li class="toctree-l3">
                     
-    <a class="" href="../../Install-python/mac/">Mac</a>
+    <a class="" href="./">Mac</a>
                 </li>
                 <li class="toctree-l3">
                     
-    <a class="" href="../../Install-python/windows/">Windows</a>
+    <a class="" href="../windows/">Windows</a>
                 </li>
     </ul>
                 </li>
@@ -122,7 +122,7 @@
     <ul class="subnav">
                 <li class="toctree-l3">
                     
-    <a class="" href="./">Overview</a>
+    <a class="" href="../../script-running/overview/">Overview</a>
                 </li>
     </ul>
                 </li>
@@ -170,7 +170,7 @@
     
       
     
-    <li>Overview</li>
+    <li>Mac</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -180,12 +180,25 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="running-the-iauditor-extractor-tool">Running the iAuditor Extractor Tool</h2>
-<p>Each time you want to run the tool, you need to ensure you have used the <code>cd</code> command to move into the correct directory. If you're unsure how to do this, please refer to the 'Installing Requirements' section for guidance. If you've come to this page directly from the configuration stage, you should be ready to go.</p>
+                <h2 id="install-python-on-a-mac">Install Python on a Mac</h2>
 <ol>
-<li>On Windows, run: <code>python exporter.py --format csv</code></li>
-<li>On macOS, run: <code>python3 exporter.py --format csv</code></li>
+<li>On the Mac, the best way to install Python is through a tool called Brew, so we'll install that first.</li>
+<li>Visit: <a href="https://brew.sh/">https://brew.sh/</a></li>
+<li>On the home page, you'll see a large "Install Homebrew" text, and below that a command that begins like this: <code>/usr/bin/ruby</code> </li>
+<li>Copy the entire command to your clipboard (highlight it all - if you double click it the entire line will be highlighted - then Right click &gt; copy or press CMD+C)
+    <img alt="'HomeBrew Website'" src="/images/brew.png" /></li>
+<li>Open the macOS Terminal. Easiest way is to press the magnifying glass icon in the top right corner of your screen or press CMD+Space. From there, search for "Terminal" and press Enter.
+    <img alt="'Spotlight Terminal'" src="/images/spotlight-terminal.png" /></li>
+<li>In the Terminal window, paste the command (Edit &gt; Paste, or CMD+V, or right click &gt; paste) from before and again hit enter. </li>
+<li>Homebrew will explain what it intends to install, press Enter to let it go ahead. </li>
+<li>Once it's finished, you'll be ready to install Python. </li>
+<li>Run <code>brew install python3</code></li>
+<li>Assuming you don't get any errors, you're ready to use the script. If you get any errors, let us know. </li>
 </ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If <code>brew install python3</code> gives an error, try quitting your Terminal (CMD+Q) and opening it again. Sometimes it needs restarting to detect newly installed software. </p>
+</div>
               
             </div>
           </div>

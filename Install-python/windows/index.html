@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Overview - iAuditor Exporter</title>
+  <title>Windows - iAuditor Exporter</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Overview";
-    var mkdocs_page_input_path = "script-running/overview.md";
+    var mkdocs_page_name = "Windows";
+    var mkdocs_page_input_path = "Install-python/windows.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -76,15 +76,15 @@
     <ul class="subnav">
                 <li class="toctree-l3">
                     
-    <a class="" href="../../Install-python/overview/">Overview</a>
+    <a class="" href="../overview/">Overview</a>
                 </li>
                 <li class="toctree-l3">
                     
-    <a class="" href="../../Install-python/mac/">Mac</a>
+    <a class="" href="../mac/">Mac</a>
                 </li>
                 <li class="toctree-l3">
                     
-    <a class="" href="../../Install-python/windows/">Windows</a>
+    <a class="" href="./">Windows</a>
                 </li>
     </ul>
                 </li>
@@ -122,7 +122,7 @@
     <ul class="subnav">
                 <li class="toctree-l3">
                     
-    <a class="" href="./">Overview</a>
+    <a class="" href="../../script-running/overview/">Overview</a>
                 </li>
     </ul>
                 </li>
@@ -170,7 +170,7 @@
     
       
     
-    <li>Overview</li>
+    <li>Windows</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -180,11 +180,19 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="running-the-iauditor-extractor-tool">Running the iAuditor Extractor Tool</h2>
-<p>Each time you want to run the tool, you need to ensure you have used the <code>cd</code> command to move into the correct directory. If you're unsure how to do this, please refer to the 'Installing Requirements' section for guidance. If you've come to this page directly from the configuration stage, you should be ready to go.</p>
+                <h2 id="install-python-on-windows">Install Python on Windows</h2>
 <ol>
-<li>On Windows, run: <code>python exporter.py --format csv</code></li>
-<li>On macOS, run: <code>python3 exporter.py --format csv</code></li>
+<li>Visit Python's Windows Releases Page: <a href="https://www.python.org/downloads/windows/">https://www.python.org/downloads/windows/</a></li>
+<li>This page contains a lot of links, the section you need is on the left hand side titled "Stable Releases"</li>
+<li>
+<p>Under "Stable Releases" you'll see various download options. In 99% of cases you'll be able to use the one called <code>Windows x86-64 exectuable installer</code></p>
+<p><img alt="'Windows Python Downloads'" src="/images/windows-python-site.png#thumbnail" /></p>
+</li>
+<li>
+<p>This will begin the download, once done open the file and click through the installer - the defaults are fine, feel free to keep clicking continue through them. </p>
+</li>
+<li>On the final page before clicking 'Finish' there is a tick box that reads "Add to PATH" - ensure this is ticked. If you're reading this having already missed the tickbox, simply re-run the installer, and it'll ask again at the end. </li>
+<li>That's it! We can now move on to the script. </li>
 </ol>
               
             </div>
