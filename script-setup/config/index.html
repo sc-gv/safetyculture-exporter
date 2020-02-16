@@ -181,13 +181,13 @@
             <div class="section">
               
                 <h2 id="editing-the-config-file">Editing the Config File</h2>
-<h3 id="key-options">Key Options</h3>
-<p>There are many options available, however only two are required for the script to run and export CSV files. </p>
+<h3 id="key-options-for-all-formats">Key Options for all formats</h3>
 <table>
 <thead>
 <tr>
 <th>Setting</th>
 <th>Optional?</th>
+<th>Accepted Parameters</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -195,16 +195,104 @@
 <tr>
 <td>token</td>
 <td>No</td>
+<td>N/A</td>
 <td>Your API key, generated from iAuditor. <a href="https://support.safetyculture.com/integrations/how-to-get-an-api-token/">Click here for guidance</a></td>
 </tr>
 <tr>
 <td>config_name</td>
 <td>No</td>
-<td>You can set the name of your configuration here. Very useful if you're managing multiple as it'll be used to name files and organise folders. Do not use any spaces in this name.</td>
+<td>N/A</td>
+<td>You can set the name of your configuration here. Very useful if you're managing multiple configurations as it'll be used to name files and organise folders. Do not use any spaces in this name.</td>
+</tr>
+<tr>
+<td>export_completed</td>
+<td>Yes</td>
+<td><code>true</code> <code>false</code> <code>both</code></td>
+<td>By default, we only export completed inspections from iAuditor. Set this to <code>true</code> to <em>only</em> receive <em>completed</em> audits, <code>false</code> to <em>only</em> receive <em>incomplete</em> inspections or <code>both</code> to export everything regardless of status. In the dataset, anything without a completed date is considered incomplete.</td>
+</tr>
+<tr>
+<td>export_archived</td>
+<td>Yes</td>
+<td><code>true</code> <code>false</code> <code>both</code></td>
+<td>By default, we do not export inspections . Set this to <code>true</code> to <em>only</em> receive archived inspections, <code>false</code> to only receive <em>archived</em> inspections or <code>both</code> to export everything regardless of status. In the dataset, the column <code>Archived</code> will be either <code>true</code> or <code>false</code> depending on the inspections current status.</td>
+</tr>
+<tr>
+<td>template_ids</td>
+<td>Yes</td>
+<td>See the tip below</td>
+<td>Here you can specify the templates from which you'd like to download your data. Leave this option blank to export all available information. See the tip below for additional guidance.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="sql-specific-options">SQL Specific Options</h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>
+<p>When setting template IDs you wish to export, you need to format the templates into a list like this: <code>template_123,template456,template,789</code>. </p>
+</li>
+<li>
+<p>If you want just one template, just write it on its own like this: <code>template_123</code>.</p>
+</li>
+<li>
+<p>If you have a large list of template IDs, you can save them into a <code>.txt</code> file. Place this in the same directory as <code>exporter.py</code> and enter the filename in this option (e.g. <code>templates.txt</code>). There is a limit on the number of templates you can place in a text file, if you receive errors you'll need to reduce it down or export everything and filter it afterwards.</p>
+</li>
+</ul>
+</div>
+<h3 id="options-only-for-csv">Options only for CSV</h3>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Optional?</th>
+<th>Accepted Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>use_real_template_name</td>
+<td>Yes</td>
+<td><code>true</code> <code>false</code> <code>single_file</code></td>
+<td>When exporting CSV files, we will export the files using template IDs. Setting this to <code>true</code> will override this and use the template name. You can also set <code>single_file</code> and the export will go to a single CSV file rather than splitting it across templates. This options has some caveats, please see the warning below.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning for use_real_template_name">
+<p class="admonition-title">Warning</p>
+<p>We only recommend using the real template name if you are doing a one-off export. If a template is renamed, the script will create a new file rather than appending to the existing one. You also need to ensure that no two templates have the same name as the script would have no way to differentiate between the two. If in doubt, keep this as either <code>false</code> or <code>single_file</code></p>
+</div>
+<h3 id="options-only-for-sql">Options only for SQL</h3>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Optional?</th>
+<th>Accepted Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>merge_rows/action_merge_rows</td>
+<td>Yes</td>
+<td><code>true</code> <code>false</code></td>
+<td>This setting, when set to <code>true</code> will update existing rows in the database when an inspection is updated after being logged. There are important caveats to this option, please review the tips and warnings below.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>There are some important caveats to enabling this option (namely it can make your exports slower, the dataset larger and cause increased database requests.) You should review <a href="/understanding-the-data/the-model">the model</a> documentation to fully understand how this works before enabling it. </p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>This setting can only be set <em>before</em> the database table is created. If you need to change this setting at a later date, you will need to drop the table first and allow it to be recreated. </li>
+<li>When enabled, <code>export_inactive_items</code> is forced to be <code>true</code> (Explained here: <a href="/understanding-the-data/the-model">the model</a>)</li>
+</ul>
+</div>
+<h3 id="other-sql-options">Other SQL Options</h3>
+<p>You must fill out all these configuration options to use the SQL export.</p>
 <table>
 <thead>
 <tr>
@@ -215,11 +303,11 @@
 <tbody>
 <tr>
 <td>sql_table</td>
-<td>The name of the table in which you want to store your iAuditor information. Best practice is to make sure it doesn't exist, as the script will create it for you.</td>
+<td>The name of the table in which you want to store your iAuditor information. Best practice is to make sure it doesn't exist, as the script will create it for you. If you want to build it yourself, check <a href="/understanding-the-data/the-model">the model</a>.</td>
 </tr>
 <tr>
 <td>database_type</td>
-<td>The type of database you're using. for SQL use 'mssql+pyodbc_mssql', for Postgres it's 'postgresql' (More should work, please refer to the SQLAlchemy documentation)</td>
+<td>For SQL use 'mssql+pyodbc_mssql' (More should work, however they're currently untested. please refer to the SQLAlchemy documentation)</td>
 </tr>
 <tr>
 <td>database_user</td>
@@ -235,11 +323,11 @@
 </tr>
 <tr>
 <td>database_port</td>
-<td>The port your database is listening on</td>
+<td>The port your database is listening on (For SQL, this is usually 1433)</td>
 </tr>
 <tr>
 <td>database_name</td>
-<td>The name of the database you'll be connecting to. You can also define the driver to use if you need to - for SQL you'll likely want to add <code>?driver=ODBC Driver 17 for SQL Server</code></td>
+<td>The name of the database you'll be connecting to. You must also define the driver to use if you need to - for SQL you'll likely want to use <code>MyDatebase?driver=ODBC Driver 17 for SQL Server</code> - replacing <code>MyDatabase</code> with the name of your database.</td>
 </tr>
 </tbody>
 </table>
@@ -256,27 +344,17 @@
 <tr>
 <td>export_path</td>
 <td>Yes</td>
-<td>absolute or relative path to the directory where to save exported data to</td>
+<td>absolute or relative path to the directory where to save exported data to (this applies to everything except <code>SQL</code> exports)</td>
 </tr>
 <tr>
 <td>filename</td>
 <td>Yes</td>
-<td>an audit item ID whose response is going to be used to name the files of exported audit reports. Can only be an item with a response type of <code>text</code> from the header section of the audit such as Audit Title, Document No., Client / Site, Prepared By, Personnel, or any custom header item which has a 'text' type response (doesn't apply when exporting as CSV)</td>
-</tr>
-<tr>
-<td>use_real_template_name</td>
-<td>Yes</td>
-<td>If you set this to true, the script will append the name of the template to the exported CSV file. Keep in mind that if you use this option and change the name of a template, a new file will be generated next time the script runs.</td>
+<td>an audit item ID whose response is going to be used to name the files of exported audit reports. Can only be an item with a response type of <code>text</code> from the header section of the audit such as Audit Title, Document No., Client / Site, Prepared By, Personnel, or any custom header item which has a 'text' type response (Only applies to PDF/Word Exports)</td>
 </tr>
 <tr>
 <td>preferences</td>
 <td>Yes</td>
-<td>to apply a preference transformation to particular templates, give here a list of preference ids</td>
-</tr>
-<tr>
-<td>template_ids</td>
-<td>Yes</td>
-<td>Here you can specify the templates from which you'd like to download your data. You need to format the templates into a list like this: <code>template_123,template456,template,789</code> - If you want just one template, just write it on its own, like this: <code>template_123</code></td>
+<td>to apply a preference transformation to particular templates, give here a list of preference ids.</td>
 </tr>
 <tr>
 <td>sync_delay_in_seconds</td>
@@ -286,7 +364,7 @@
 <tr>
 <td>export_inactive_items</td>
 <td>Yes</td>
-<td>This setting only applies when exporting to CSV. Valid values are true (export all items) or false (do not export inactive items). Items that are nested under <a href="https://support.safetyculture.com/templates/smart-fields/">Smart Field</a> will be 'inactive' if the smart field condition is not satisfied for these items.</td>
+<td>This setting only applies when exporting to CSV. Valid values are true (export all items) or false (do not export inactive items). Items that are nested under <a href="https://support.safetyculture.com/templates/smart-fields/">Smart Field</a> will be 'inactive' if the smart field condition is not satisfied for these items. This option is forced to <code>true</code> if you're using SQL and enable either of the <code>merge_rows</code> options.</td>
 </tr>
 <tr>
 <td>media_sync_offset_in_seconds</td>
