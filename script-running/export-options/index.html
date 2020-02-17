@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://safetyculture.github.io/iauditor-exporter/understanding-the-data/overview/">
+        <link rel="canonical" href="https://safetyculture.github.io/iauditor-exporter/script-running/export-options/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>Understanding the output from the iAuditor Exporter Tool - iAuditor Exporter</title>
+        <title>Export Options - iAuditor Exporter</title>
       
     
     
@@ -81,7 +81,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#understanding-the-output-from-the-iauditor-exporter-tool" tabindex="0" class="md-skip">
+      <a href="#export-options" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -107,7 +107,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Understanding the output from the iAuditor Exporter Tool
+                Export Options
               
             </span>
           
@@ -460,7 +460,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../script-running/overview/" title="Overview" class="md-nav__link">
+    <a href="../overview/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -501,7 +501,7 @@
 
 
   <li class="md-nav__item">
-    <a href="." title="Overview" class="md-nav__link">
+    <a href="../../understanding-the-data/overview" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -513,7 +513,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../csv-or-sql" title="CSV or SQL?" class="md-nav__link">
+    <a href="../../understanding-the-data/csv-or-sql" title="CSV or SQL?" class="md-nav__link">
       CSV or SQL?
     </a>
   </li>
@@ -525,7 +525,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../datastructure" title="Columns" class="md-nav__link">
+    <a href="../../understanding-the-data/datastructure" title="Columns" class="md-nav__link">
       Columns
     </a>
   </li>
@@ -537,7 +537,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../the-model" title="Database Model" class="md-nav__link">
+    <a href="../../understanding-the-data/the-model" title="Database Model" class="md-nav__link">
       Database Model
     </a>
   </li>
@@ -569,9 +569,91 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#in-this-section" class="md-nav__link">
-    In this section
+  <a href="#formats" class="md-nav__link">
+    Formats
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#csv" class="md-nav__link">
+    CSV
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql" class="md-nav__link">
+    SQL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actions" class="md-nav__link">
+    Actions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdfdocx" class="md-nav__link">
+    PDF/DOCX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#media" class="md-nav__link">
+    Media
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-report-links" class="md-nav__link">
+    Web Report Links
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    JSON
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-parameters" class="md-nav__link">
+    Additional Parameters
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loop" class="md-nav__link">
+    Loop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#config" class="md-nav__link">
+    Config
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -591,18 +673,52 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/SafetyCulture/iauditor-exporter/edit/master/docs/understanding-the-data/overview.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/SafetyCulture/iauditor-exporter/edit/master/docs/script-running/export-options.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="understanding-the-output-from-the-iauditor-exporter-tool">Understanding the output from the iAuditor Exporter Tool</h1>
-<p>The iAuditor Exporter tool has been created to help make it easier to take the data given by our API and import it into BI tools such as PowerBI, Qlik and Tableau. </p>
-<p>The tool can currently export both inspection data and actions data into either CSV files or directly into a SQL database. </p>
-<h2 id="in-this-section">In this section</h2>
+                <h1 id="export-options">Export Options</h1>
+<p>Although the primary use for this tool is to export inspection data into either CSV or SQL, there are other formats supported. </p>
+<p>You can run any of these options either individually or together by adding them with a space when running the tool:</p>
+<p><code>python exporter.py --format sql actions media</code></p>
+<p>In the above example, you'd export all your inspection data and actions to SQL, as well as locally downloading all associated media. </p>
+<h2 id="formats">Formats</h2>
+<h3 id="csv">CSV</h3>
+<p><code>python exporter.py --format csv</code></p>
+<p>Exports all available inspection data into CSV format. See <a href="../../understanding-the-data/datastructure/">here</a> for detailed discussion of the output. </p>
+<h3 id="sql">SQL</h3>
+<p><code>python exporter.py --format sql</code></p>
+<p>Exports all available inspection data into the configured SQL database. </p>
 <ul>
-<li><a href="../../understanding-the-data/csv-or-sql/">Guidance on deciding between CSV or SQL to store your data</a></li>
-<li><a href="../../understanding-the-data/datastructure/">Explanations of all the columns found in the dataset</a></li>
-<li><a href="../../understanding-the-data/the-model/">Details of the SQL table the script automatically creates</a></li>
+<li>See <a href="../../understanding-the-data/datastructure/">here</a> for detailed discussion of the output</li>
+<li>See <a href="../../understanding-the-data/the-model/">here</a> for detailed discussion of how we structure the SQL table</li>
 </ul>
+<h3 id="actions">Actions</h3>
+<p><code>python exporter.py --format actions</code></p>
+<p>Exports all available Actions into a SQL table. CSV support will be added back in shortly - if you need it in the mean time, it is available in the old exporter. </p>
+<h3 id="pdfdocx">PDF/DOCX</h3>
+<p><code>python exporter.py --format pdf</code> or <code>python exporter.py --format docx</code></p>
+<p>Or combine them and have both: <code>python exporter.py --format pdf docx</code></p>
+<p>Exports all available inspections in PDF and/or DOCX (Word) format. </p>
+<h3 id="media">Media</h3>
+<p>Exports all the media attached to available inspections and stores them in a folder per inspection. Files are named with their unique media ID + the file extension of the image. More information on this can be found in the tip <a href="../../understanding-the-data/datastructure/#mediahypertextreference">here</a>. </p>
+<h3 id="web-report-links">Web Report Links</h3>
+<p><code>python exporter.py --format web-report-link</code></p>
+<p>Exports a CSV file of AuditIDs along with their public web report links. This is really useful when working with tools like PowerBI, as you can use it as a reference table for web report links without having to store them multiple times in the main dataset. SQL support for this table is coming soon. </p>
+<p>The CSV file includes five columns: Template ID, Template Name, Audit ID, Audit Name, and Web Report Link.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>By running the tool with this option, we'll generate public links for every inspection available. Although these links will not be tracked by search engines, they are still completely public by design. If you do not want any of your inspections to have generated public URLs, do not use this option. </p>
+</div>
+<h3 id="json">JSON</h3>
+<p>Exports all available inspections in JSON format. The output here is no different to downloading inspections directly from the API. </p>
+<h2 id="additional-parameters">Additional Parameters</h2>
+<h3 id="loop">Loop</h3>
+<p><code>python exporter.py --format sql --loop</code></p>
+<p>By default, if there are more than 1000 inspections to export or once all inspections have exported, the tool will exit. By adding <code>--loop</code> when running the tool, the script will wait the number of seconds defined by <code>sync_delay_in_seconds</code> in the config file (default is 900 seconds/15 minutes) and continue.</p>
+<h3 id="config">Config</h3>
+<p><code>python exporter.py --format sql --config new_config.yaml</code></p>
+<p>You may need to maintain multiple configurations, in which case you can define the name of the configuration file you wish to use. By default we look in the <code>configs</code> folder for a file called <code>config.yaml</code>. If you want to use a different file, just drop it into the <code>configs</code> folder and reference it here. </p>
+<h3 id="_1"></h3>
                 
                   
                 
