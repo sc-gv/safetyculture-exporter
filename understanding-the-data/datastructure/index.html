@@ -581,6 +581,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#sortingindex" class="md-nav__link">
+    SortingIndex
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#itemtype" class="md-nav__link">
     ItemType
   </a>
@@ -954,6 +961,13 @@
 <p class="admonition-title">Info</p>
 <p>The columns are listed here in the same order they appear in the output. All columns are of type <code>String</code> in SQL unless stated otherwise. </p>
 </div>
+<h3 id="sortingindex">SortingIndex</h3>
+<p><strong>SQL Data Type:</strong> <code>Integer</code></p>
+<p>A numerical index to aid in sorting inspections into the order they're conducted. The number runs from 1 up until the last question of the inspection then resets for the next inspection. </p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In order to use this column for sorting, you need to first sort by AuditID, then by SortingIndex. </p>
+</div>
 <h3 id="itemtype">ItemType</h3>
 <p>This column describes the type of item information in this particular row. Possible values are:</p>
 <h4 id="question-types"><strong>Question Types</strong></h4>
@@ -1065,6 +1079,7 @@
 </div>
 <h3 id="datepk">DatePK</h3>
 <p><strong>SQL Note:</strong> Forms part of the Primary Key in SQL</p>
+<p>Only present in the SQL output, not required or included for the CSV export. </p>
 <p>The date presented in EPOCH format (e.g. number of seconds since January 1st 1970) - Exists to be used as part of three column primary key with AuditID and ItemID. Please see the Primary Key section for further explanation. </p>
 <h3 id="responseid">ResponseID</h3>
 <p>Any response that isn't free text will be assigned an ID. These are unique <em>within an audit</em>. If you want to track a particular response, tracking the ID is usually more robust as it avoids any issues should someone rename a response. </p>
