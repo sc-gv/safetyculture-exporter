@@ -633,10 +633,12 @@
 <h2 id="primary-keys">Primary Keys</h2>
 <p>In a lot of databases, the Primary Key would be a single column however when working with iAuditor, we combine either two or three columns to obtain a unique reference. By defining what makes a column unique, we can also use it as a means to update records that already exist. </p>
 <h3 id="if-merge_rowsactions_merge_rows-is-disabled">If merge_rows/actions_merge_rows is disabled</h3>
-<p>When this is set to <code>false</code> in the config file, the Primary Key of the database is formed using three columns:
-* <code>AuditID</code>
-* <code>ItemID</code>
-* <code>DatePK</code></p>
+<p>When this is set to <code>false</code> in the config file, the Primary Key of the database is formed using three columns:</p>
+<ul>
+<li><code>AuditID</code></li>
+<li><code>ItemID</code></li>
+<li><code>DatePK</code></li>
+</ul>
 <p>We've already discussed how the <code>AuditID</code> and <code>ItemID</code> can form a unique reference, but we need to allow for the possibility of a modified inspection reappearing. This is done using the column <code>DatePK</code>. </p>
 <p><code>DatePK</code> is a custom column added by the script (it isn't present in the usual API output), and is the EPOCH representation (the number of seconds since January 1st 1970) of <code>DateModified</code>. It isn't possible to use a column of type <code>DateTime</code> as part of a Primary Key, but we can use a number (a Big Integer in this case) hence the creation of <code>DatePK</code>.</p>
 <p>By combining these three columns, we can guarantee that all rows are truly unique, no matter when they were modified. </p>
@@ -645,9 +647,11 @@
 <p>When using this method, you'll need to use a SQL statement to only bring in the most recently modified value.</p>
 </div>
 <h3 id="if-merge_rowsactions_merge_rows-is-enabled">If merge_rows/actions_merge_rows is enabled</h3>
-<p>When this is set to <code>true</code> in the config file, the Primary Key of the database is formed using two columns:
-* <code>AuditID</code>
-* <code>ItemID</code></p>
+<p>When this is set to <code>true</code> in the config file, the Primary Key of the database is formed using two columns:</p>
+<ul>
+<li><code>AuditID</code></li>
+<li><code>ItemID</code></li>
+</ul>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>The exporting of inactive items is also forced to <code>true</code>. See the warning below for some discussion around this.</p>
