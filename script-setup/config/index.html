@@ -261,6 +261,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../install-intros/upgrading" title="Upgrading" class="md-nav__link">
+      Upgrading
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../install-intros/quick-install" title="Quick Install" class="md-nav__link">
       Quick Install
     </a>
@@ -298,13 +310,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
     
-    <label class="md-nav__link" for="nav-2-5">
+    <label class="md-nav__link" for="nav-2-6">
       1. Install Python
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-5">
+      <label class="md-nav__title" for="nav-2-6">
         1. Install Python
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -358,13 +370,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7">
     
-    <label class="md-nav__link" for="nav-2-6">
+    <label class="md-nav__link" for="nav-2-7">
       2. Download the Script
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-6">
+      <label class="md-nav__title" for="nav-2-7">
         2. Download the Script
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -406,13 +418,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-8" type="checkbox" id="nav-2-8">
     
-    <label class="md-nav__link" for="nav-2-7">
+    <label class="md-nav__link" for="nav-2-8">
       3. Setting up the Script
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-7">
+      <label class="md-nav__title" for="nav-2-8">
         3. Setting up the Script
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -442,6 +454,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../other-databases/" title="Other Databases (MySQL, Postgres)" class="md-nav__link">
+      Other Databases (MySQL, Postgres)
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -454,13 +478,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-8" type="checkbox" id="nav-2-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-9" type="checkbox" id="nav-2-9">
     
-    <label class="md-nav__link" for="nav-2-8">
+    <label class="md-nav__link" for="nav-2-9">
       4. Running the Script
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-8">
+      <label class="md-nav__title" for="nav-2-9">
         4. Running the Script
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -662,6 +686,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#naming-exported-pdf-or-word-files" class="md-nav__link">
+    Naming exported PDF or Word files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-list-available-preference-ids" class="md-nav__link">
+    How to list available preference IDs
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -737,31 +775,35 @@
 <td>Your API key, generated from iAuditor. <a href="https://support.safetyculture.com/integrations/how-to-get-an-api-token/">Click here for guidance</a></td>
 </tr>
 <tr>
-<td>config_name</td>
-<td>No</td>
+<td>Below options are only available in version &gt;2.1, ensure you update if you wish to use them.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ssl_cert</td>
+<td>Yes</td>
+<td></td>
+<td>The path to a CA_BUNDLE file or directory with certificates of trusted CAs - This config option is currently under testing and may not work. Please let us know if you need to use this and we can test it with you.</td>
+</tr>
+<tr>
+<td>proxy_http</td>
+<td>Yes but both HTTP and HTTPS must be filled out if one is used</td>
 <td>N/A</td>
-<td>You can set the name of your configuration here. Very useful if you're managing multiple configurations as it'll be used to name files and organise folders. Do not use any spaces in this name.</td>
+<td>If you use a proxy, you can enter it here. (HTTP Traffic)</td>
 </tr>
 <tr>
-<td>export_completed</td>
-<td>Yes</td>
-<td><code>true</code> <code>false</code> <code>both</code></td>
-<td>By default, we only export completed inspections from iAuditor. Set this to <code>true</code> to <em>only</em> receive <em>completed</em> audits, <code>false</code> to <em>only</em> receive <em>incomplete</em> inspections or <code>both</code> to export everything regardless of status. In the dataset, anything without a completed date is considered incomplete.</td>
-</tr>
-<tr>
-<td>export_archived</td>
-<td>Yes</td>
-<td><code>true</code> <code>false</code> <code>both</code></td>
-<td>By default, we do not export inspections . Set this to <code>true</code> to <em>only</em> receive archived inspections, <code>false</code> to only receive <em>archived</em> inspections or <code>both</code> to export everything regardless of status. In the dataset, the column <code>Archived</code> will be either <code>true</code> or <code>false</code> depending on the inspections current status.</td>
-</tr>
-<tr>
-<td>template_ids</td>
-<td>Yes</td>
-<td>See the tip below</td>
-<td>Here you can specify the templates from which you'd like to download your data. Leave this option blank to export all available information. See the tip below for additional guidance.</td>
+<td>proxy_https</td>
+<td>Yes but both HTTP and HTTPS must be filled out if one is used</td>
+<td>N/A</td>
+<td>If you use a proxy, you can enter it here. (HTTPS Traffic)</td>
 </tr>
 </tbody>
 </table>
+<p>| config_name | No | N/A | You can set the name of your configuration here. Very useful if you're managing multiple configurations as it'll be used to name files and organise folders. Do not use any spaces in this name. 
+| export_completed | Yes | <code>true</code> <code>false</code> <code>both</code> | By default, we only export completed inspections from iAuditor. Set this to <code>true</code> to <em>only</em> receive <em>completed</em> audits, <code>false</code> to <em>only</em> receive <em>incomplete</em> inspections or <code>both</code> to export everything regardless of status. In the dataset, anything without a completed date is considered incomplete.<br />
+| export_archived | Yes | <code>true</code> <code>false</code> <code>both</code> | By default, we do not export inspections . Set this to <code>true</code> to <em>only</em> receive archived inspections, <code>false</code> to only receive <em>archived</em> inspections or <code>both</code> to export everything regardless of status. In the dataset, the column <code>Archived</code> will be either <code>true</code> or <code>false</code> depending on the inspections current status.
+| template_ids | Yes | See the tip below | Here you can specify the templates from which you'd like to download your data. Leave this option blank to export all available information. See the tip below for additional guidance.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
@@ -841,11 +883,11 @@
 <tbody>
 <tr>
 <td>sql_table</td>
-<td>The name of the table in which you want to store your iAuditor information. Best practice is to make sure it doesn't exist, as the script will create it for you. If you want to build it yourself, check <a href="../..w/understanding-the-data/the-model">the model</a>.</td>
+<td>The name of the table in which you want to store your iAuditor information. Best practice is to make sure it doesn't exist, as the script will create it for you. If you want to build it yourself, check <a href="../../understanding-the-data/the-model">the model</a>.</td>
 </tr>
 <tr>
 <td>database_type</td>
-<td>For SQL use 'mssql+pyodbc_mssql' (More should work, however they're currently untested. please refer to the SQLAlchemy documentation)</td>
+<td>For SQL: <code>mssql+pyodbc_mssql</code>. For MySQL: <code>mysql</code> <a href="script-setup/mysql">Additional MySQL info is here</a>(. (More should work, however they're currently untested. please refer to the SQLAlchemy documentation)</td>
 </tr>
 <tr>
 <td>database_user</td>
@@ -865,7 +907,7 @@
 </tr>
 <tr>
 <td>database_name</td>
-<td>The name of the database you'll be connecting to. You must also define the driver to use if you need to - for SQL you'll likely want to use <code>MyDatebase?driver=ODBC Driver 17 for SQL Server</code> - replacing <code>MyDatabase</code> with the name of your database.</td>
+<td>The name of the database you'll be connecting to. You must also define the driver to use if you need to - for SQL use: <code>MyDatebase?driver=ODBC Driver 17 for SQL Server</code> - replacing <code>MyDatabase</code> with the name of your database. For MySQL, you only need to specify the database name.</td>
 </tr>
 </tbody>
 </table>
@@ -887,12 +929,12 @@
 <tr>
 <td>filename</td>
 <td>Yes</td>
-<td>an audit item ID whose response is going to be used to name the files of exported audit reports. Can only be an item with a response type of <code>text</code> from the header section of the audit such as Audit Title, Document No., Client / Site, Prepared By, Personnel, or any custom header item which has a 'text' type response (Only applies to PDF/Word Exports)</td>
+<td>an audit item ID whose response is going to be used to name the files of exported audit reports. Must be a single item with a response type of <code>text</code> from the header section of the audit. See below for more information.</td>
 </tr>
 <tr>
 <td>preferences</td>
 <td>Yes</td>
-<td>to apply a preference transformation to particular templates, give here a list of preference ids.</td>
+<td>to apply a preference transformation to particular templates, give here a list of preference ids. See below for more information on this.</td>
 </tr>
 <tr>
 <td>sync_delay_in_seconds</td>
@@ -911,6 +953,57 @@
 </tr>
 </tbody>
 </table>
+<h3 id="naming-exported-pdf-or-word-files">Naming exported PDF or Word files</h3>
+<p>Note that when automatic Audit Title rules are set on the template, the Audit will not contain an Audit Title field by default. Regardless, the export filename setting will still work as expected using the automatically generated Audit name.</p>
+<p>When configuring a custom filename convention in export settings (in <code>config.yaml</code>) you can provide an audit item ID from the ones below to cause all exported audit reports be named after the response of that particular item in the audit.</p>
+<p>Here are some standard item IDs</p>
+<table>
+<thead>
+<tr>
+<th>Item Name</th>
+<th>Item ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Audit Title</td>
+<td>f3245d40-ea77-11e1-aff1-0800200c9a66</td>
+</tr>
+<tr>
+<td>Conducted By</td>
+<td>f3245d43-ea77-11e1-aff1-0800200c9a66</td>
+</tr>
+<tr>
+<td>Document No</td>
+<td>f3245d46-ea77-11e1-aff1-0800200c9a66</td>
+</tr>
+<tr>
+<td>Conducted At (Location)</td>
+<td>f3245d44-ea77-11e1-aff1-0800200c9a66</td>
+</tr>
+</tbody>
+</table>
+<p>or from any other header item of the audit created by the user (a custom header item). </p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To find the item ID of such custom header items export one audit from the template of interest in JSON format and inspect the contents to identify the item ID of interest in the <code>header_items</code> section.</p>
+</div>
+<p>E.g. the following <code>config.yaml</code></p>
+<pre><code>export_options:
+    filename: f3245d40-ea77-11e1-aff1-0800200c9a66
+</code></pre>
+
+<p>will result in all exported files named after the <code>Audit Title</code> field.</p>
+<h3 id="how-to-list-available-preference-ids">How to list available preference IDs</h3>
+<p>To list all available global preference IDs and their associated templates:</p>
+<pre><code>iauditor_exporter --list_preferences
+</code></pre>
+
+<p>To list global and template specific preference IDs associated with specific templates:</p>
+<pre><code>iauditor_exporter --list_preferences template_3E631E46F466411B9C09AD804886A8B4
+</code></pre>
+
+<p>Multiple template IDs can be passed, separated by a space</p>
                 
                   
                 

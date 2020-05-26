@@ -261,6 +261,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../upgrading" title="Upgrading" class="md-nav__link">
+      Upgrading
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../quick-install" title="Quick Install" class="md-nav__link">
       Quick Install
     </a>
@@ -298,13 +310,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
     
-    <label class="md-nav__link" for="nav-2-5">
+    <label class="md-nav__link" for="nav-2-6">
       1. Install Python
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-5">
+      <label class="md-nav__title" for="nav-2-6">
         1. Install Python
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -358,13 +370,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7">
     
-    <label class="md-nav__link" for="nav-2-6">
+    <label class="md-nav__link" for="nav-2-7">
       2. Download the Script
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-6">
+      <label class="md-nav__title" for="nav-2-7">
         2. Download the Script
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -406,13 +418,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-8" type="checkbox" id="nav-2-8">
     
-    <label class="md-nav__link" for="nav-2-7">
+    <label class="md-nav__link" for="nav-2-8">
       3. Setting up the Script
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-7">
+      <label class="md-nav__title" for="nav-2-8">
         3. Setting up the Script
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -442,6 +454,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../script-setup/other-databases/" title="Other Databases (MySQL, Postgres)" class="md-nav__link">
+      Other Databases (MySQL, Postgres)
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -454,13 +478,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-8" type="checkbox" id="nav-2-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-9" type="checkbox" id="nav-2-9">
     
-    <label class="md-nav__link" for="nav-2-8">
+    <label class="md-nav__link" for="nav-2-9">
       4. Running the Script
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-8">
+      <label class="md-nav__title" for="nav-2-9">
         4. Running the Script
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -603,13 +627,26 @@
                 
                 
                 <h1 id="notes-on-using-linux">Notes on using Linux</h1>
-<p>Setting up the tool on Linux is very similar to macOS. Most Linux users will be able to use the <a href="../../install-intros/quick-install">quick install</a>) guide to get the initial set up done. </p>
-<p>In testing using Ubuntu 18 LTS, the only additional requirements required on a fresh install were:
- * Git (<code>sudo apt install git</code>)
- * Pip for Python3 (<code>sudo apt install python3-pip</code>)
- * Unix ODBC Library (<code>sudo apt install unixodbc-dev</code>) </p>
+<p>Setting up the tool on Linux is very similar to macOS. Most Linux users will be able to use the <a href="../../install-intros/quick-install">quick install</a> guide to get the initial set up done. </p>
+<p>In testing using Ubuntu 18 LTS, the only additional requirements required on a fresh install were:</p>
+<ul>
+<li>Git (<code>sudo apt install git</code>)</li>
+<li>Pip for Python3 (<code>sudo apt install python3-pip</code>)</li>
+<li>Unix ODBC Library (<code>sudo apt install unixodbc-dev</code>) </li>
+</ul>
 <p>Of course if you're using a distro other than Ubuntu, you'll need to use the relevant package manager. </p>
-<p>If you experience other dependency requirements on your flavour of Linux, please raise an issue with the solution and I'll append it to this page so others can benefit. </p>
+<p>If you experience other dependency requirements on your flavour of Linux, please raise an issue with the solution and I'll append it to this page so others can benefit.</p>
+<h1 id="raspberry-pi">Raspberry Pi</h1>
+<p>There have been some queries around running this tool on a Raspberry Pi (running Raspbian.) It would appear that Numpy can have some issues on a Pi, giving an error:</p>
+<pre><code>import error: libf77blas.so.3: cannot open shared object file:No such file or directory
+</code></pre>
+
+<p>This is likely due to missing dependencies. Try:</p>
+<pre><code>sudo apt-get install python-dev libatlas-base-dev
+</code></pre>
+
+<p>You may need to re-run <code>pip install -r requirements.txt</code> afterwards. </p>
+<p>Further Reading: https://stackoverflow.com/questions/53784520/numpy-import-error-python3-on-raspberry-pi</p>
                 
                   
                 
