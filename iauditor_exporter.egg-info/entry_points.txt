@@ -1,0 +1,3 @@
+[console_scripts]
+exporter = iauditor_exporter.exporter:main
+
