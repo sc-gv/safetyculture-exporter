@@ -28,6 +28,7 @@ var (
 	defaultRetryWaitMin = 1 * time.Second
 	defaultRetryWaitMax = 30 * time.Second
 	defaultRetryMax     = 4
+	phani               = true
 )
 
 // Client is used to with iAuditor API's.
