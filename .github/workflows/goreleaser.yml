@@ -44,12 +44,12 @@ jobs:
             echo "building on ${{ matrix.os }}"
             echo ${{ env.GITHUB_REF }}
             echo ${{ env.GITHUB_HEAD_REF }}
-            ./scripts/build-linux.sh
+            ./ui/scripts/build-linux.sh
 
         - name: Build package macos
           if: matrix.os == 'macos-latest'
           run: |
-            ./scripts/build-macos.sh
+            ./ui/scripts/build-macos.sh
 
         - name: Build package windows
           if: matrix.os == 'ubuntu-latest'
@@ -58,7 +58,7 @@ jobs:
             echo "building on ${{ matrix.os }}"
             echo ${{ env.GITHUB_REF }}
             echo ${{ env.GITHUB_HEAD_REF }}
-            ./scripts/build-windows.sh
+            ./ui/scripts/build-windows.sh
 
         - name: Upload artifacts macOS
           if: matrix.os == 'macos-latest'
