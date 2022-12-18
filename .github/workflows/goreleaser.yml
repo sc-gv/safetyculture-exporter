@@ -39,6 +39,7 @@ jobs:
 
         - name: Build package linux
           if: matrix.os == 'ubuntu-latest'
+          working-directory: ./ui
           run: |
             export PATH=$PATH:$(go env GOPATH)/bin
             echo "building on ${{ matrix.os }}"
@@ -53,6 +54,7 @@ jobs:
 
         - name: Build package windows
           if: matrix.os == 'ubuntu-latest'
+          working-directory: ./ui
           run: |
             export PATH=$PATH:$(go env GOPATH)/bin
             echo "building on ${{ matrix.os }}"
